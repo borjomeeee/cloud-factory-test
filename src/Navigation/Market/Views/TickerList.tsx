@@ -1,11 +1,11 @@
 import {observer} from 'mobx-react-lite';
 import React from 'react';
 import * as RN from 'react-native';
-import {FlatList} from '../../../Components/FlatList';
-import {Spacer} from '../../../Components/Spacer';
 import {Ticker as TickerModel} from '../../../Models/Ticker';
 import {useStore} from '../../../Store';
 import {Ticker} from './Ticker';
+
+import {RecyclerListView, DataProvider, LayoutProvider} from 'recyclerlistview';
 
 export const TickerList: React.FC = observer(() => {
   const {marketStore} = useStore();
@@ -15,29 +15,51 @@ export const TickerList: React.FC = observer(() => {
     [marketStore.tickers],
   );
 
+  const dataProvider = React.useMemo(
+    () =>
+      new DataProvider((r1, r2) => {
+        return r1.id !== r2.id;
+      }).cloneWithRows(tickersList),
+    [tickersList],
+  );
+
   return (
-    <FlatList
-      data={tickersList}
-      keyExtractor={keyExtractor}
-      renderItem={renderItem}
-      ItemSeparatorComponent={Separator}
-      getItemLayout={getItemLayout}
+    <RecyclerListView
+      layoutProvider={layoutProvider}
+      dataProvider={dataProvider}
+      rowRenderer={rowRenderer}
     />
   );
 });
 
-function getItemLayout(data: TickerModel[] | null | undefined, index: number) {
-  return {length: 53, offset: 53 * index, index};
-}
+const screenWidth = RN.Dimensions.get('screen').width;
 
-function keyExtractor(ticker: TickerModel) {
-  return ticker.id.toString();
-}
+const layoutProvider = new LayoutProvider(
+  _ => {
+    return 0;
+  },
+  (_, dim) => {
+    dim.height = 53 + 4;
+    dim.width = screenWidth;
+  },
+);
 
-function renderItem({item}: RN.ListRenderItemInfo<TickerModel>) {
+function rowRenderer(_, item: TickerModel) {
   return <Ticker ticker={item} />;
 }
 
-function Separator() {
-  return <Spacer height={20} />;
-}
+// function getItemLayout(data: TickerModel[] | null | undefined, index: number) {
+//   return {length: 53, offset: 53 * index, index};
+// }
+
+// function keyExtractor(ticker: TickerModel) {
+//   return ticker.id.toString();
+// }
+
+// function renderItem({item}: RN.ListRenderItemInfo<TickerModel>) {
+//   return <Ticker ticker={item} />;
+// }
+
+// function Separator() {
+//   return <Spacer height={20} />;
+// }

@@ -5,6 +5,8 @@ export const configureStyles = () => {
     text: () => ({
       fontFamily: 'Inter-Regular',
       fontSize: 16,
+
+      color: '#000000',
     }),
 
     medium: () => ({

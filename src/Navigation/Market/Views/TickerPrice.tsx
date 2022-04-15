@@ -46,7 +46,7 @@ export const TickerPrice: React.FC<TickerPriceProps> = React.memo(({price}) => {
     });
   }, [animValue]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (!lastPrice.value) {
       lastPrice.value = price;
       return;
