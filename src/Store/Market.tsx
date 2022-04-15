@@ -20,7 +20,6 @@ export class MarketStore {
   }
 
   setError(message: string) {
-    console.log('set message');
     this.lastError = message;
   }
 

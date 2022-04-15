@@ -8,12 +8,10 @@ export const useMarketService = () => {
 
   const getTickers = React.useCallback(async () => {
     try {
-      console.log('get values');
       const tickers = await loadTickers();
       marketStore.setTickers(tickers);
       marketStore.clearError();
     } catch (e) {
-      console.log('handle error', e.message);
       marketStore.setError('Update list of stoks failed');
     }
   }, [marketStore, loadTickers]);
@@ -26,12 +24,10 @@ export const useMarketService = () => {
     getTickers();
     const intervalId = setInterval(getTickers, 5000);
 
-    console.log('sub: ', intervalId);
     marketStore.subscribe(() => clearInterval(intervalId));
   }, [getTickers, marketStore]);
 
   const unsubscribeFromTickers = React.useCallback(() => {
-    console.log('unsub');
     marketStore.unsubscribe();
   }, [marketStore]);
 
