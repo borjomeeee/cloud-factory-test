@@ -1,7 +1,6 @@
 import s from '@borjomeeee/rn-styles';
 import React from 'react';
 import Animated, {
-  Extrapolate,
   interpolateColor,
   useAnimatedStyle,
   useSharedValue,

@@ -2,7 +2,9 @@ import {makeAutoObservable} from 'mobx';
 import {Ticker} from '../Models/Ticker';
 
 export class MarketStore {
-  sub?: () => void;
+  sub?: () => void = undefined;
+
+  lastError?: string = undefined;
   tickers: Record<string, Ticker> = {};
 
   constructor() {
@@ -15,6 +17,15 @@ export class MarketStore {
 
   isSubscribed() {
     return !!this.sub;
+  }
+
+  setError(message: string) {
+    console.log('set message');
+    this.lastError = message;
+  }
+
+  clearError() {
+    this.lastError = undefined;
   }
 
   subscribe(sub: () => void) {

@@ -11,8 +11,10 @@ export const useMarketService = () => {
       console.log('get values');
       const tickers = await loadTickers();
       marketStore.setTickers(tickers);
+      marketStore.clearError();
     } catch (e) {
-      console.error(e);
+      console.log('handle error', e.message);
+      marketStore.setError('Update list of stoks failed');
     }
   }, [marketStore, loadTickers]);
 

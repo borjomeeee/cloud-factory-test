@@ -22,6 +22,10 @@ function transformTickers(data: any): Record<string, Ticker> {
     throw new BadDataError(`Expected object but get: ${typeof data}`);
   }
 
+  if (Math.random() > 0.5) {
+    throw new BadDataError(`Expected object but get: ${typeof data}`);
+  }
+
   const res: Record<string, Ticker> = {};
 
   for (const pair in data) {
