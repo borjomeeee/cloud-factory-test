@@ -12,8 +12,11 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2532C093CA0C44C69D01F17C /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2594636638646D4B8B72A71 /* Inter-SemiBold.ttf */; };
+		59EDB37927784C18817FDE26 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47839D2382FD41028E3365FB /* Inter-ExtraBold.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-CloudFactory-CloudFactoryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-CloudFactory-CloudFactoryTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		9337B392DF87467FA39B39DE /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C03AEB0908B4317A5B7EFD1 /* Inter-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +41,14 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CloudFactory/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-CloudFactory-CloudFactoryTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CloudFactory-CloudFactoryTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-CloudFactory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudFactory.debug.xcconfig"; path = "Target Support Files/Pods-CloudFactory/Pods-CloudFactory.debug.xcconfig"; sourceTree = "<group>"; };
+		47839D2382FD41028E3365FB /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-ExtraBold.ttf"; path = "../src/Assets/Fonts/Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-CloudFactory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudFactory.release.xcconfig"; path = "Target Support Files/Pods-CloudFactory/Pods-CloudFactory.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-CloudFactory-CloudFactoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudFactory-CloudFactoryTests.debug.xcconfig"; path = "Target Support Files/Pods-CloudFactory-CloudFactoryTests/Pods-CloudFactory-CloudFactoryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5C03AEB0908B4317A5B7EFD1 /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../src/Assets/Fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-CloudFactory.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CloudFactory.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CloudFactory/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-CloudFactory-CloudFactoryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudFactory-CloudFactoryTests.release.xcconfig"; path = "Target Support Files/Pods-CloudFactory-CloudFactoryTests/Pods-CloudFactory-CloudFactoryTests.release.xcconfig"; sourceTree = "<group>"; };
+		E2594636638646D4B8B72A71 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-SemiBold.ttf"; path = "../src/Assets/Fonts/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -96,6 +102,17 @@
 			name = CloudFactory;
 			sourceTree = "<group>";
 		};
+		1E01D63DFBB547D582D2437B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				47839D2382FD41028E3365FB /* Inter-ExtraBold.ttf */,
+				5C03AEB0908B4317A5B7EFD1 /* Inter-Regular.ttf */,
+				E2594636638646D4B8B72A71 /* Inter-SemiBold.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +139,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				1E01D63DFBB547D582D2437B /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -244,6 +262,9 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				59EDB37927784C18817FDE26 /* Inter-ExtraBold.ttf in Resources */,
+				9337B392DF87467FA39B39DE /* Inter-Regular.ttf in Resources */,
+				2532C093CA0C44C69D01F17C /* Inter-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

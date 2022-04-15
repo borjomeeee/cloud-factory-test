@@ -1,0 +1,37 @@
+import React from 'react';
+import {useMarketRepository} from '../Repository/Market';
+import {useStore} from '../Store';
+
+export const useMarketService = () => {
+  const {marketStore} = useStore();
+  const {loadTickers} = useMarketRepository();
+
+  const getTickers = React.useCallback(async () => {
+    try {
+      console.log('get values');
+      const tickers = await loadTickers();
+      marketStore.setTickers(tickers);
+    } catch (e) {
+      console.error(e);
+    }
+  }, [marketStore, loadTickers]);
+
+  const subscribeToTickers = React.useCallback(async () => {
+    if (marketStore.isSubscribed()) {
+      return;
+    }
+
+    getTickers();
+    const intervalId = setInterval(getTickers, 5000);
+
+    console.log('sub: ', intervalId);
+    marketStore.subscribe(() => clearInterval(intervalId));
+  }, [getTickers, marketStore]);
+
+  const unsubscribeFromTickers = React.useCallback(() => {
+    console.log('unsub');
+    marketStore.unsubscribe();
+  }, [marketStore]);
+
+  return {subscribeToTickers, unsubscribeFromTickers};
+};
