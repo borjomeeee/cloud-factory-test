@@ -23,3 +23,13 @@ export function lowerThen(num1: string, num2: string) {
 
   return num1.length < num2.length;
 }
+
+export function shallowCompare(
+  newObj: Record<string, any>,
+  prevObj: Record<string, any>,
+) {
+  for (const key in newObj) {
+    if (newObj[key] !== prevObj[key]) return false;
+  }
+  return true;
+}

@@ -7,6 +7,7 @@ import SwapIcon from '../../../Assets/Svg/Swap';
 import s from '@borjomeeee/rn-styles';
 
 import {TickerPrice} from './TickerPrice';
+import {shallowCompare} from '../Utils';
 
 interface TickerProps {
   ticker: TickerModel;
@@ -34,12 +35,3 @@ export const Ticker: React.FC<TickerProps> = React.memo(
 // a simple implementation of the shallowCompare.
 // only compares the first level properties and hence shallow.
 // state updates(theoretically) if this function returns true.
-function shallowCompare(
-  newObj: Record<string, any>,
-  prevObj: Record<string, any>,
-) {
-  for (const key in newObj) {
-    if (newObj[key] !== prevObj[key]) return false;
-  }
-  return true;
-}

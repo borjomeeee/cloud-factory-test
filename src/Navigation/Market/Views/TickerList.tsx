@@ -6,6 +6,7 @@ import {useStore} from '../../../Store';
 import {Ticker} from './Ticker';
 
 import {RecyclerListView, DataProvider, LayoutProvider} from 'recyclerlistview';
+import {shallowCompare} from '../Utils';
 
 export const TickerList: React.FC = observer(() => {
   const {marketStore} = useStore();
@@ -18,7 +19,7 @@ export const TickerList: React.FC = observer(() => {
   const dataProvider = React.useMemo(
     () =>
       new DataProvider((r1, r2) => {
-        return r1.id !== r2.id;
+        return shallowCompare(r1, r2);
       }).cloneWithRows(tickersList),
     [tickersList],
   );
