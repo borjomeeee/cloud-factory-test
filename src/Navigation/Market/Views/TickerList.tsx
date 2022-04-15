@@ -45,7 +45,7 @@ const layoutProvider = new LayoutProvider(
   },
 );
 
-function rowRenderer(_, item: TickerModel) {
+function rowRenderer(_: any, item: TickerModel) {
   return <Ticker ticker={item} />;
 }
 

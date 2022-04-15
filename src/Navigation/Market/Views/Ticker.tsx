@@ -23,7 +23,7 @@ export const Ticker: React.FC<TickerProps> = React.memo(
           <Text style={s(`bold c:#333333`)}>{ticker.exchangeToName}</Text>
         </View>
         <View style={s(`aife`)}>
-          <TickerPrice price={ticker.price || '0'} />
+          <TickerPrice id={ticker.id} price={ticker.price || '0'} />
           <Text style={s(`bold c:#BEBEBE`)}>HB {ticker.highestBid}</Text>
         </View>
       </View>
